@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Survey</title>
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    text-align:center;
+    background:white;
+    overflow:hidden;
+}
+
+.screen{
+    display:none;
+    min-height:100vh;
+    padding:40px 20px;
+    box-sizing:border-box;
+}
+
+.active{display:block;}
+
+button{
+    padding:14px 28px;
+    font-size:16px;
+    border:none;
+    border-radius:8px;
+    background:#000;
+    color:white;
+    cursor:pointer;
+    margin-top:25px;
+}
+
+h1{font-weight:600;}
+.question{margin:18px 0; text-align:left; max-width:400px; margin-left:auto; margin-right:auto;}
+
+.red-bg{
+    background: linear-gradient(135deg, #8b0000, #b11226);
+    color:white;
+}
+
+.tulips img{
+    width:80px;
+    margin:10px;
+    cursor:pointer;
+    transition:.2s;
+}
+.tulips img:hover{transform:scale(1.1);}
+
+.petals{
+    position:fixed;
+    top:-10px;
+    font-size:20px;
+    animation: fall linear infinite;
+}
+@keyframes fall{
+    to{transform:translateY(110vh);}
+}
+
+.gif{
+    max-width:250px;
+    border-radius:12px;
+    margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="screen active" id="s1">
+    <h1>Hello</h1>
+    <p>Click Next to start the survey</p>
+    <button onclick="next(2)">Next</button>
+</div>
+
+<div class="screen" id="s2">
+    <h1>Human Body & Daily Science Survey</h1>
+
+    <div class="question">
+        <b>1. How many hours do you usually sleep per night?</b><br>
+        <input type="radio" name="q1"> Less than 5<br>
+        <input type="radio" name="q1"> 5–6<br>
+        <input type="radio" name="q1"> 7–8<br>
+        <input type="radio" name="q1"> More than 8
+    </div>
+
+    <div class="question">
+        <b>2. How often do you drink water in a day?</b><br>
+        <input type="radio" name="q2"> Rarely<br>
+        <input type="radio" name="q2"> Sometimes<br>
+        <input type="radio" name="q2"> Often<br>
+        <input type="radio" name="q2"> Very often
+    </div>
+
+    <div class="question">
+        <b>3. Which part of the human body do you find most interesting?</b><br>
+        <input type="radio" name="q3"> Brain<br>
+        <input type="radio" name="q3"> Heart<br>
+        <input type="radio" name="q3"> Eyes<br>
+        <input type="radio" name="q3"> Skin<br>
+        <input type="radio" name="q3"> Muscles
+    </div>
+
+    <div class="question">
+        <b>4. Do you believe stress affects physical health?</b><br>
+        <input type="radio" name="q4"> Yes<br>
+        <input type="radio" name="q4"> No<br>
+        <input type="radio" name="q4"> Not sure
+    </div>
+
+    <button onclick="next(3)">Next to continue</button>
+</div>
+
+<div class="screen red-bg" id="s3">
+    <h1>Hello, Inna 🌷</h1>
+    <p>Pick your favorite tulips</p>
+
+    <div class="tulips">
+        <img src="https://i.imgur.com/2RXSy9o.png" onclick="next(4)">
+        <img src="https://i.imgur.com/2RXSy9o.png" onclick="next(4)">
+        <img src="https://i.imgur.com/2RXSy9o.png" onclick="next(4)">
+        <img src="https://i.imgur.com/2RXSy9o.png" onclick="next(4)">
+    </div>
+</div>
+
+<div class="screen red-bg" id="s4">
+    <h1>Happy Valentine’s! 🌷</h1>
+    <p>Wala lang, gusto lang kitang mapasaya.</p>
+    <img class="gif" src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
+</div>
+
+<script>
+function next(n){
+    document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+    document.getElementById('s'+n).classList.add('active');
+    if(n==4){petals();}
+}
+
+function petals(){
+    setInterval(()=>{
+        let p=document.createElement('div');
+        p.className='petals';
+        p.innerHTML='🌸';
+        p.style.left=Math.random()*100+'vw';
+        p.style.animationDuration=(Math.random()*3+3)+'s';
+        document.body.appendChild(p);
+        setTimeout(()=>p.remove(),6000);
+    },300);
+}
+</script>
+
+</body>
+</html>
