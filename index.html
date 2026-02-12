@@ -69,12 +69,14 @@ h1{font-weight:600;}
 
 <body>
 
+<!-- Screen 1 -->
 <div class="screen active" id="s1">
     <h1>Hello</h1>
     <p>Click Next to start the survey</p>
     <button onclick="next(2)">Next</button>
 </div>
 
+<!-- Screen 2: Survey -->
 <div class="screen" id="s2">
     <h1>Human Body & Daily Science Survey</h1>
 
@@ -113,22 +115,23 @@ h1{font-weight:600;}
     <button onclick="next(3)">Next to continue</button>
 </div>
 
+<!-- Screen 3: Tulip Selection -->
 <div class="screen red-bg" id="s3">
     <h1>Hello, Inna 🌷</h1>
     <p>Pick your favorite tulips</p>
 
     <div class="tulips">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Tulip_flower_red.png" onclick="next(4)">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Tulip_flower_yellow.png" onclick="next(4)">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Tulip_flower_pink.png" onclick="next(4)">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Tulip_flower_white.png" onclick="next(4)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Red_and_yellow_tulip_flower.jpg" onclick="next(4)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Pink_and_white_tulip_flower.jpg" onclick="next(4)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Purple_tulip_%281%29.jpg" onclick="next(4)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Tulip%2C_White-Red.jpg" onclick="next(4)">
     </div>
 </div>
 
+<!-- Screen 4: Final GIF -->
 <div class="screen red-bg" id="s4">
     <h1>Happy Valentine’s! 🌷</h1>
     <p>Wala lang, gusto lang kitang mapasaya.</p>
-    <!-- Public GIF na nag-aabot ng flowers -->
     <img class="gif" src="https://media.giphy.com/media/3oKIPwoeGErMmaI43C/giphy.gif">
 </div>
 
